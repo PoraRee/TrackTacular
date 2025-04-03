@@ -1,0 +1,7 @@
+conda create -n tracktacular_rep python=3.9.21
+conda activate tracktacular_rep
+
+# pip install torch==2.6.0 torchvision==0.21.0
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu124
+pip install mmcv==2.2.0 -f https://download.openmmlab.com/mmcv/dist/cu124/torch2.6/index.html
+pip install -r requirements.txt
