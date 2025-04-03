@@ -1,0 +1,20 @@
+services:
+  tracktacular_cuda:
+    image: tracktacular_cuda_2
+    # image: tracktacular_cuda
+    build: .
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: all
+              capabilities: [gpu]
+    ports:
+      - 18888:8888
+    volumes:
+      - .:/workspace
+    shm_size: 16gb
+    # command: /bin/bash
+    # stdin_open: true
+    # tty: true
