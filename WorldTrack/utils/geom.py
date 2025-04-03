@@ -1,8 +1,18 @@
 import torch
 import utils.basic
+from typing import Literal
 
 
-def eye_4x4(B, device='cuda'):
+def eye_4x4(B: int, device:Literal['cuda', 'cpu']='cuda') -> torch.Tensor:
+    """Create 4x4 identity matrices as shape (B, 4, 4) 
+
+    Args:
+        B (int): Batch size
+        device (Literal['cuda', 'cpu'], optional): Running device. Defaults to 'cuda'.
+
+    Returns:
+        torch.Tensor: Identity matrices (batch size duplicated).
+    """
     rt = torch.eye(4, device=torch.device(device)).view(1, 4, 4).repeat([B, 1, 1])
     return rt
 
