@@ -215,3 +215,9 @@ WorldTrack/.ipynb_checkpoints/
 # IDEs
 .idea
 .vscode
+
+# dataset
+Wildtrack/
+
+# zip
+archive.zip
